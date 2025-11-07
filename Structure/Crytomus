@@ -1,0 +1,20 @@
+crypto-toolkit/
+├─ .github/
+│  ├─ ISSUE_TEMPLATE/
+│  │  ├─ bug.yml
+│  │  └─ feature_request.yml
+│  └─ PULL_REQUEST_TEMPLATE.md
+├─ crypto_toolkit/
+│  ├─ __init__.py
+│  ├─ ltc.py
+│  ├─ sol.py
+│  ├─ utils.py
+│  └─ cli.py
+├─ tests/
+│  ├─ test_ltc.py
+│  ├─ test_sol.py
+│  └─ test_cli.py
+├─ README.md
+├─ LICENSE
+├─ requirements.txt
+└─ setup.py
