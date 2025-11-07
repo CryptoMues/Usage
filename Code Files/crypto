@@ -1,0 +1,31 @@
+import argparse
+from .ltc import get_ltc_balance, validate_ltc_address
+from .sol import get_sol_balance, validate_sol_address
+
+def main():
+    parser = argparse.ArgumentParser(description="Crypto Toolkit by CryptoCCS")
+    subparsers = parser.add_subparsers(dest="command")
+
+    # Litecoin command
+    ltc_parser = subparsers.add_parser("ltc", help="Litecoin commands")
+    ltc_parser.add_argument("action", choices=["balance", "validate"])
+    ltc_parser.add_argument("address")
+
+    # Solana command
+    sol_parser = subparsers.add_parser("sol", help="Solana commands")
+    sol_parser.add_argument("action", choices=["balance", "validate"])
+    sol_parser.add_argument("address")
+
+    args = parser.parse_args()
+
+    if args.command == "ltc":
+        if args.action == "balance":
+            print(get_ltc_balance(args.address))
+        elif args.action == "validate":
+            print(validate_ltc_address(args.address))
+
+    elif args.command == "sol":
+        if args.action == "balance":
+            print(get_sol_balance(args.address))
+        elif args.action == "validate":
+            print(validate_sol_address(args.address))
